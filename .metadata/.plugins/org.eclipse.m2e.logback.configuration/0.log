@@ -1,0 +1,52 @@
+2017-01-05 13:27:33,581 [Worker-9] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' D:\collaboration\com.niit.Collaboration\pom.xml
+2017-01-05 13:27:42,491 [Worker-9] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.niit:com.niit.Collaboration:0.0.1-SNAPSHOT @ D:\collaboration\com.niit.Collaboration\pom.xml.
+2017-01-05 13:27:45,676 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /com.niit.Collaboration/src/main/java
+2017-01-05 13:27:45,677 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /com.niit.Collaboration/src/main/resources
+2017-01-05 13:27:45,679 [Worker-9] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /com.niit.Collaboration/src/test/java
+2017-01-05 13:27:53,438 [Worker-9] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 19 sec
+2017-01-05 13:30:43,511 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' D:\collaboration\CollborationBackend\pom.xml
+2017-01-05 13:30:45,862 [Worker-14] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.niit:CollborationBackend:0.0.1-SNAPSHOT @ D:\collaboration\CollborationBackend\pom.xml.
+2017-01-05 13:30:48,225 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CollborationBackend/src/main/java
+2017-01-05 13:30:48,226 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /CollborationBackend/src/main/resources
+2017-01-05 13:30:48,226 [Worker-14] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /CollborationBackend/src/test/java
+2017-01-05 13:30:50,413 [Worker-14] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 6 sec
+2017-01-05 13:30:51,412 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:30:51,493 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:30:51,499 [Worker-16] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:30:51,500 [Worker-16] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:32:28,233 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:32:28,238 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:32:28,242 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:32:28,243 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:32:34,352 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:32:34,353 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:32:34,358 [Worker-17] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:32:34,360 [Worker-17] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:34:41,932 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:34:41,934 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:34:41,936 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:34:41,937 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:35:52,570 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:35:52,572 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:35:52,574 [Worker-15] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:35:52,575 [Worker-15] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:35:56,471 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:35:56,473 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:35:56,477 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:35:56,478 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:35:57,808 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:35:57,810 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:35:57,813 [Worker-65] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:35:57,815 [Worker-65] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:36:31,379 [Worker-62] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\collaboration\CollborationBackend
+2017-01-05 13:36:31,380 [Worker-62] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean
+2017-01-05 13:36:35,640 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:36:35,654 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-01-05 13:36:35,657 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:36:35,658 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\collaboration\CollborationBackend\src\test\resources
+2017-01-05 13:36:35,679 [Worker-63] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of CollborationBackend
+2017-01-05 13:36:35,680 [Worker-63] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for CollborationBackend
+2017-01-05 13:36:35,695 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2017-01-05 13:36:52,878 [main] INFO  o.e.m2e.actions.ExecutePomAction - Creating new launch configuration
+2017-01-05 13:37:17,281 [Worker-63] INFO  o.e.m.i.launch.MavenLaunchDelegate - D:\collaboration\CollborationBackend
+2017-01-05 13:37:17,282 [Worker-63] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B clean compile install
