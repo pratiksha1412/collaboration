@@ -1,0 +1,18 @@
+package com.niit.collaboration.dao;
+
+import java.util.List;
+
+import com.niit.collaboration.model.Job_applied;
+
+public interface Job_applied_appliedDAO {
+	//CRUD OPERATION  AND VALIDATIONS
+			//access-specifier return_type methodname(parameterlist)throe exception list
+			 
+			public List<Job_applied>list();
+			public boolean save(Job_applied job_applied);
+			public boolean update(Job_applied job_applied);
+			public Job_applied get(String id);
+		//if the job_applied exist return job_applied instance else return null
+			public Job_applied validate (String id, String password);
+			
+}

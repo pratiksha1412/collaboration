@@ -1,0 +1,79 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.dao.BlogDAO;
+import com.niit.collaboration.model.Blog;
+@Repository("blogDAO")
+public class BlogDAOImpl implements BlogDAO{
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public BlogDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Blog> list() {
+		String hql = "from Blog";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Blog> blogList = query.list();
+		return blogList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Blog blog) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(blog);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Blog blog) {
+		try {
+			sessionFactory.getCurrentSession().update(blog);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Blog get(String id) {
+		// select * from Blog where id="101";
+		Blog blog = (Blog) sessionFactory.getCurrentSession().get(Blog.class, id);
+
+		return blog;
+	}
+
+	@Transactional
+	
+	public Blog validate(String id, String password) {
+		// select 8 from Blog  where id='101' and password='niit';
+		String hql="from Blog where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Blog blog = (Blog)query.uniqueResult();
+		return blog;
+	}
+
+
+}

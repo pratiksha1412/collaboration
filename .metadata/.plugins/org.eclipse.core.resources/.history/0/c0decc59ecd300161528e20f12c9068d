@@ -1,0 +1,80 @@
+/*package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.dao.Job_appliedDAO;
+import com.niit.collaboration.model.Job_applied;
+@Repository("job_applied")
+public class Job_appliedDAOImpl implements Job_appliedDAO {
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public Job_appliedDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Job_applied> list() {
+		String hql = "from Job_applied";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Job_applied> job_appliedList = query.list();
+		return job_appliedList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Job_applied job_applied) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(job_applied);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Job_applied job_applied) {
+		try {
+			sessionFactory.getCurrentSession().update(job_applied);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Job_applied get(String id) {
+		// select * from Job_applied where id="101";
+		Job_applied job_applied = (Job_applied) sessionFactory.getCurrentSession().get(Job_applied.class, id);
+
+		return job_applied;
+	}
+
+	@Transactional
+	
+	public Job_applied validate(String id, String password) {
+		// select 8 from Job_applied  where id='101' and password='niit';
+		String hql="from Job_applied where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Job_applied job_applied = (Job_applied)query.uniqueResult();
+		return job_applied;
+	}
+
+}
+*/

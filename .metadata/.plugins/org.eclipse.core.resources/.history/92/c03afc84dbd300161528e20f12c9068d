@@ -1,0 +1,3 @@
+package com.niit.collaboration.dao;
+
+public interface Job_appliedDAO {

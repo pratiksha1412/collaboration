@@ -1,0 +1,80 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.dao.EventDAO;
+import com.niit.collaboration.model.Event;
+@Repository("eventDAO")
+public class EventDAOImpl implements EventDAO {
+
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public EventDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Event> list() {
+		String hql = "from Event";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Event> eventList = query.list();
+		return eventList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Event event) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(event);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Event event) {
+		try {
+			sessionFactory.getCurrentSession().update(event);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Event get(String id) {
+		// select * from Event where id="101";
+		Event event = (Event) sessionFactory.getCurrentSession().get(Event.class, id);
+
+		return event;
+	}
+
+	@Transactional
+	
+	public Event validate(String id, String password) {
+		// select 8 from Event  where id='101' and password='niit';
+		String hql="from Event where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Event event = (Event)query.uniqueResult();
+		return event;
+	}
+
+}

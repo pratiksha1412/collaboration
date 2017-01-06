@@ -1,0 +1,18 @@
+package com.niit.collaboration.dao;
+
+import java.util.List;
+
+import com.niit.collaboration.model.Event;
+
+public interface EventDAO {
+	//CRUD OPERATION  AND VALIDATIONS
+			//access-specifier return_type methodname(parameterlist)throe exception list
+			 
+			public List<Event>list();
+			public boolean save(Event event);
+			public boolean update(Event event);
+			public Event get(String id);
+		//if the event exist return event instance else return null
+			public Event validate (String id, String password);
+			
+}

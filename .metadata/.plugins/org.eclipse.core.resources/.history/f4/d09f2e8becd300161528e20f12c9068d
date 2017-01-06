@@ -1,0 +1,18 @@
+package com.niit.collaboration.dao;
+
+import java.util.List;
+
+import com.niit.collaboration.model.Friend;
+
+public interface FriendDAO {
+	//CRUD OPERATION  AND VALIDATIONS
+			//access-specifier return_type methodname(parameterlist)throe exception list
+			 
+			public List<Friend>list();
+			public boolean save(Friend friend);
+			public boolean update(Friend friend);
+			public Friend get(String id);
+		//if the friend exist return friend instance else return null
+			public Friend validate (String id, String password);
+			
+}

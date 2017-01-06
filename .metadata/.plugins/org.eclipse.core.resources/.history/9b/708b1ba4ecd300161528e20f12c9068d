@@ -1,0 +1,18 @@
+package com.niit.collaboration.dao;
+
+import java.util.List;
+
+import com.niit.collaboration.model.Blog;
+
+public interface BlogDAO {
+	//CRUD OPERATION  AND VALIDATIONS
+			//access-specifier return_type methodname(parameterlist)throe exception list
+			 
+			public List<Blog>list();
+			public boolean save(Blog blog);
+			public boolean update(Blog blog);
+			public Blog get(String id);
+		//if the blog exist return blog instance else return null
+			public Blog validate (String id, String password);
+			
+}

@@ -1,0 +1,77 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.model.Forum_comment;
+
+public class Forum_commentDAOImpl {
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public Forum_commentDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Forum_comment> list() {
+		String hql = "from Forum_comment";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Forum_comment> forum_commentList = query.list();
+		return forum_commentList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Forum_comment forum_comment) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(forum_comment);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Forum_comment forum_comment) {
+		try {
+			sessionFactory.getCurrentSession().update(forum_comment);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Forum_comment get(String id) {
+		// select * from Forum_comment where id="101";
+		Forum_comment forum_comment = (Forum_comment) sessionFactory.getCurrentSession().get(Forum_comment.class, id);
+
+		return forum_comment;
+	}
+
+	@Transactional
+	
+	public Forum_comment validate(String id, String password) {
+		// select 8 from Forum_comment  where id='101' and password='niit';
+		String hql="from Forum_comment where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Forum_comment forum_comment = (Forum_comment)query.uniqueResult();
+		return forum_comment;
+	}
+
+}

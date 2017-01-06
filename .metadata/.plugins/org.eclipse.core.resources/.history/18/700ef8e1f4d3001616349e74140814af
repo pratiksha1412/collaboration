@@ -1,0 +1,91 @@
+package com.niit.collboration.testcases;
+
+import static org.junit.Assert.*;
+
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.niit.collaboration.dao.UserDAO;
+import com.niit.collaboration.model.User;
+
+import junit.framework.Assert;
+
+public class UserTestcase {
+	@Autowired
+	static User user;
+	
+	
+
+	@Autowired
+	static UserDAO userDAO;
+
+	@Autowired
+	static AnnotationConfigApplicationContext context;
+
+	@BeforeClass
+	public static void init() {
+		context = new AnnotationConfigApplicationContext();
+		context.scan("com.niit");
+		context.refresh();
+		userDAO = (UserDAO) context.getBean("userDAO");
+		user = (User) context.getBean("user");
+		
+	}
+
+	@Test
+	public void CreateuserTestCase() {
+
+		user.setId("1");
+		user.setName("pratiksha");
+		user.setMail("pratiksha@gmail.com");
+		user.setContact("9999222233");
+		user.setStatus("N");
+		user.setRole("A");
+		user.setRemark("admin");
+		user.setIs_online("Y");
+		user.setPassword("pratiksha");
+		boolean status = userDAO.save(user);
+		Assert.assertEquals("Create user Test Case", true, status);
+
+	}
+
+/*	
+ @Test
+public void UpdateuserTestCase() {
+		boolean status = userDAO.update(user);
+		Assert.assertEquals("Update user Test Case", true, status);
+
+	}
+
+	@Test
+	public void GetuserTestCase() {
+		Assert.assertEquals("Get One user Test Case", null, userDAO.get("sanket"));
+	}
+
+@Test
+	public void GetAlluserTestCase() {
+		Assert.assertEquals("Get All user Test Case", 3, userDAO.list().size());
+
+	}
+
+	@Test
+	public void IsValidUserTestCase()
+	{
+		Assert.assertEquals("asdsads", 1, userDAO.validate("ankur", "baghel"));
+		User u = userDAO.validate("asdsjk"
+				+ "", "baghel1");
+		System.out.println(u.getId());
+		System.out.println(u.getName());
+		System.out.println(u.getPassword());
+		System.out.println(u.getMail());
+		System.out.println(u.getStatus());
+		System.out.println(u.getRole());
+		System.out.println(u.getRemark());
+		System.out.println(u.getContact());
+		System.out.println(u.getIs_online());
+		
+		
+		}*/
+}

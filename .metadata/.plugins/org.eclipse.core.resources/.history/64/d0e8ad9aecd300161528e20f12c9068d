@@ -1,0 +1,18 @@
+package com.niit.collaboration.dao;
+
+import java.util.List;
+
+import com.niit.collaboration.model.Forum;
+
+public interface ForumDAO {
+	//CRUD OPERATION  AND VALIDATIONS
+			//access-specifier return_type methodname(parameterlist)throe exception list
+			 
+			public List<Forum>list();
+			public boolean save(Forum forum);
+			public boolean update(Forum forum);
+			public Forum get(String id);
+		//if the forum exist return forum instance else return null
+			public Forum validate (String id, String password);
+			
+}

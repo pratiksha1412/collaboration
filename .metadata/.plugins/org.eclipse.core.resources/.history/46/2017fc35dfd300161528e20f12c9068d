@@ -1,0 +1,78 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.model.Job;
+
+public class JobDAOImpl {
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public JobDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Job> list() {
+		String hql = "from Job";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Job> jobList = query.list();
+		return jobList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Job job) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(job);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Job job) {
+		try {
+			sessionFactory.getCurrentSession().update(job);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Job get(String id) {
+		// select * from Job where id="101";
+		Job job = (Job) sessionFactory.getCurrentSession().get(Job.class, id);
+
+		return job;
+	}
+
+	@Transactional
+	
+	public Job validate(String id, String password) {
+		// select 8 from Job  where id='101' and password='niit';
+		String hql="from Job where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Job job = (Job)query.uniqueResult();
+		return job;
+	}
+
+
+}

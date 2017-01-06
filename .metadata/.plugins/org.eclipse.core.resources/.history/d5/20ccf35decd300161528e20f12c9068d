@@ -1,0 +1,80 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.dao.ForumDAO;
+import com.niit.collaboration.model.Forum;
+@Repository("forumDAO")
+public class ForumDAOImpl implements ForumDAO {
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public ForumDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Forum> list() {
+		String hql = "from Forum";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Forum> forumList = query.list();
+		return forumList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Forum forum) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(forum);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Forum forum) {
+		try {
+			sessionFactory.getCurrentSession().update(forum);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Forum get(String id) {
+		// select * from Forum where id="101";
+		Forum forum = (Forum) sessionFactory.getCurrentSession().get(Forum.class, id);
+
+		return forum;
+	}
+
+	@Transactional
+	
+	public Forum validate(String id, String password) {
+		// select 8 from Forum  where id='101' and password='niit';
+		String hql="from Forum where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Forum forum = (Forum)query.uniqueResult();
+		return forum;
+	}
+
+
+}

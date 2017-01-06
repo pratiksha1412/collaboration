@@ -1,0 +1,80 @@
+package com.niit.collaboration.daoimpl;
+
+import java.util.List;
+
+import org.hibernate.Query;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.niit.collaboration.dao.FriendDAO;
+import com.niit.collaboration.model.Friend;
+@Repository("friendDAO")
+public class FriendDAOImpl implements FriendDAO {
+	@Autowired
+	public SessionFactory sessionFactory;
+
+	public FriendDAOImpl(SessionFactory sessionFactory) {
+		this.sessionFactory = sessionFactory;
+	}
+
+	@Transactional
+
+	public List<Friend> list() {
+		String hql = "from Friend";
+		Query query = sessionFactory.getCurrentSession().createQuery(hql);
+		List<Friend> friendList = query.list();
+		return friendList;
+
+	}
+
+	@Transactional
+
+	public boolean save(Friend friend) {
+		try
+		{
+			sessionFactory.getCurrentSession().save(friend);
+		} 
+		
+		catch (Exception e) {
+			return false;
+
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public boolean update(Friend friend) {
+		try {
+			sessionFactory.getCurrentSession().update(friend);
+		} catch (Exception e) {
+			return false;
+		}
+		return true;
+	}
+
+	@Transactional
+
+	public Friend get(String id) {
+		// select * from Friend where id="101";
+		Friend friend = (Friend) sessionFactory.getCurrentSession().get(Friend.class, id);
+
+		return friend;
+	}
+
+	@Transactional
+	
+	public Friend validate(String id, String password) {
+		// select 8 from Friend  where id='101' and password='niit';
+		String hql="from Friend where id = '" + id +"' and password ='"+password+"'";
+		
+		Query query= sessionFactory.getCurrentSession().createQuery(hql);
+		
+	Friend friend = (Friend)query.uniqueResult();
+		return friend;
+	}
+
+
+}

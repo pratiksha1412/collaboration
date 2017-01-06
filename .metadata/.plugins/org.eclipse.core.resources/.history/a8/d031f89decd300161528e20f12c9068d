@@ -1,0 +1,18 @@
+package com.niit.collaboration.dao;
+
+import java.util.List;
+
+import com.niit.collaboration.model.Forum_comment;
+
+public interface Forum_commentDAO {
+	//CRUD OPERATION  AND VALIDATIONS
+			//access-specifier return_type methodname(parameterlist)throe exception list
+			 
+			public List<Forum_comment>list();
+			public boolean save(Forum_comment forum_comment);
+			public boolean update(Forum_comment forum_comment);
+			public Forum_comment get(String id);
+		//if the forum_comment exist return forum_comment instance else return null
+			public Forum_comment validate (String id, String password);
+			
+}
